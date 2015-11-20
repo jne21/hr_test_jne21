@@ -1,0 +1,23 @@
+AbstractProcessor
+Abstract class, that inherits by other read/write processors. Implenets interface ProcessorInterface.
+
+ReadWriteProcessor
+Reads then tries to write using custom reader and writer. Then it calls custom logger.
+
+YieldProcessor is generator.
+It reads by reader, logs read items and returns them as iterable list.
+
+ReaderFactory and WriterFactory create instance of necessary type. It also checking implementation of ReaderInterface/WriterInterface by created instance.
+
+Product - Reads products from database.
+Csv - provides output in csv format.
+ConsoleOutput - outputs to console
+Html - outputs data in html format.
+Stub - write emulator with no output
+
+ConsoleLogger: callable class.
+Constructor sets protected debug property. Default value is false.
+When called ConsoleLogger does the following:
+
+If  the next value of countItem is even and debug property is true its outputs this value with trailing space.
+Then if $status parameter is empty it outputs warning message with dump of $item parameter.
